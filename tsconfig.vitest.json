@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.app.json",
+  "exclude": [],
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["dom", "esnext"],
+    "types": ["node", "jsdom", "vite/client", "element-plus/global"],
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.vitest.tsbuildinfo",
+
+  }
+}

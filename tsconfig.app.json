@@ -1,0 +1,21 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue","src/**/*.ts","src/**/*.d.ts"],
+  "exclude": ["src/**/__tests__/*","node_modules","dist","**/*.js","**/*.md","src/**/*.md"],
+  "references": [{ "path": "./tsconfig.node.json"}],
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["dom", "esnext"],
+    "types": ["node", "jsdom", "vite/client", "element-plus/global"],
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "strict": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

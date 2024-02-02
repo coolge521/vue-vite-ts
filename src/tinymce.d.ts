@@ -1,0 +1,35 @@
+/// <reference types="vite/client" />
+
+declare module 'tinymce/models/dom';
+declare module 'tinymce/themes/silver';
+declare module 'tinymce/icons/default';
+declare module 'tinymce/langs/zh-Hans';
+declare module 'tinymce/plugins/advlist';
+declare module 'tinymce/plugins/anchor';
+declare module 'tinymce/plugins/autolink';
+declare module 'tinymce/plugins/autoresize';
+declare module 'tinymce/plugins/autosave';
+declare module 'tinymce/plugins/charmap';
+declare module 'tinymce/plugins/code';
+declare module 'tinymce/plugins/codesample';
+declare module 'tinymce/plugins/directionality';
+declare module 'tinymce/plugins/emoticons';
+declare module 'tinymce/plugins/fullscreen';
+declare module 'tinymce/plugins/help';
+declare module 'tinymce/plugins/image';
+declare module 'tinymce/plugins/importcss';
+declare module 'tinymce/plugins/insertdatetime';
+declare module 'tinymce/plugins/link';
+declare module 'tinymce/plugins/lists';
+declare module 'tinymce/plugins/media';
+declare module 'tinymce/plugins/nonbreaking';
+declare module 'tinymce/plugins/pagebreak';
+declare module 'tinymce/plugins/preview';
+declare module 'tinymce/plugins/quickbars';
+declare module 'tinymce/plugins/save';
+declare module 'tinymce/plugins/searchreplace';
+declare module 'tinymce/plugins/table';
+declare module 'tinymce/plugins/template';
+declare module 'tinymce/plugins/visualblocks';
+declare module 'tinymce/plugins/visualchars';
+declare module 'tinymce/plugins/wordcount';
