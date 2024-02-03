@@ -2,35 +2,32 @@
 defineProps<{
   msg: string;
 }>();
+import { ref, computed } from 'vue';
+let id = 0;
+const todos = ref([
+  { id: id++, text: 'Learn HTML', done: true },
+  { id: id++, text: 'Learn JavaScript', done: true },
+  { id: id++, text: 'Learn Vue', done: false }
+]);
+const hideFinished = ref(false);
+const todoList = computed(() => {
+  return todos.value.filter((todo) => todo.done === hideFinished.value);
+});
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> + <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-    </h3>
+  <div>
+    <ElButton @click="hideFinished = !hideFinished">过滤</ElButton>
+    <ul v-for="todo in todoList" :key="todo.id">
+      <li>{{ todo.text }}</li>
+    </ul>
   </div>
 </template>
 
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
-
 h3 {
-  font-size: 1.2rem;
+  color: brown;
 }
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
 @media (min-width: 1024px) {
   .greetings h1,
   .greetings h3 {
