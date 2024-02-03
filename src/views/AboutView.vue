@@ -3,7 +3,8 @@
     <el-table :data="tableData?.list" stripe style="width: 100%">
       <el-table-column :prop="c.key" :label="c.name" width="180" v-for="c in columns" :key="c.key" />
     </el-table>
-    <el-pagination v-if="tableData?.list?.length" v-model:current-page="params.curPage" :total="tableData.totalCount - 0" v-model:page-size="params.pageSize" />
+    <el-pagination v-if="tableData?.list?.length" v-model:current-page="params.curPage" :total="tableData.totalCount - 0"
+      v-model:page-size="params.pageSize" />
   </div>
 </template>
 <script setup lang="ts">
