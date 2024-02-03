@@ -10,7 +10,9 @@ import router from './router';
 
 import { setGlobalOptions } from 'vue-request';
 setGlobalOptions({
-  manual: false
+  manual: false,
+  loadingDelay: 400,
+  loadingKeep: 1000
 });
 
 const app = createApp(App);

@@ -3,11 +3,12 @@ import type { AxiosResponse } from 'axios';
 
 import type { RequestConfig } from './request/types';
 import cache from '@/utils/cache';
+import { ElMessageBox } from 'element-plus';
 
 export interface HttpResponse<T> {
-  statusCode: number;
-  desc: string;
-  result: T;
+  code: number;
+  message: string;
+  body: T;
 }
 
 // 重写返回类型
@@ -22,18 +23,18 @@ const request = new Request({
     // 请求拦截器
     requestInterceptors: (config) => {
       //可以配置token
-      const license = cache.session.get('license');
-      if (license) {
-        config.headers['license'] = license;
-      } else {
+      let license = cache.session.get('license');
+      if (!license) {
         cache.session.set('license', 'abd77a37e3e9f9e6c86d5496e49882c0');
         cache.session.set('token', '1701539934978052224');
       }
+      license = cache.session.get('license');
+      config.headers['license'] = license;
       return config;
     },
     // 响应拦截器
     responseInterceptors: (result: AxiosResponse) => {
-      return result;
+      return result.data;
     }
   }
 });

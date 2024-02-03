@@ -31,15 +31,15 @@ class Request {
     this.instance.interceptors.request.use(this.interceptorsObj?.requestInterceptors, this.interceptorsObj?.requestInterceptorsCatch);
     this.instance.interceptors.response.use(this.interceptorsObj?.responseInterceptors, this.interceptorsObj?.responseInterceptorsCatch);
     // 全局响应拦截器保证最后执行
-    this.instance.interceptors.response.use(
-      // 因为我们接口的数据都在res.data下，所以我们直接返回res.data
-      (res: AxiosResponse) => {
-        const url = res.config.url || '';
-        this.abortControllerMap.delete(url);
-        return res.data;
-      },
-      (err: any) => err
-    );
+    // this.instance.interceptors.response.use(
+    //   // 因为我们接口的数据都在res.data下，所以我们直接返回res.data
+    //   (res: AxiosResponse) => {
+    //     const url = res.config.url || '';
+    //     this.abortControllerMap.delete(url);
+    //     return res.data;
+    //   },
+    //   (err: any) => err
+    // );
   }
   request<T>(config: RequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
@@ -54,7 +54,6 @@ class Request {
           if (config.interceptors?.responseInterceptors) {
             res = config.interceptors.responseInterceptors(res);
           }
-
           resolve(res);
         })
         .catch((err: any) => {
