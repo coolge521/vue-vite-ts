@@ -8,7 +8,7 @@ import HelloWorld from './components/HelloWorld.vue';
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <!--      <HelloWorld msg="You did it!" />-->
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -21,6 +21,12 @@ import HelloWorld from './components/HelloWorld.vue';
 </template>
 
 <style>
+#app {
+  height: 100%;
+  width: 100%;
+  max-width: unset;
+  padding: 0;
+}
 #nprogress .bar {
   background: red;
 }

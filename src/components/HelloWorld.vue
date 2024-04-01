@@ -17,10 +17,9 @@ const todoList = computed(() => {
 
 <template>
   <div>
-    <ElButton @click="hideFinished = !hideFinished">过滤</ElButton>
-    <ul v-for="todo in todoList" :key="todo.id">
-      <li>{{ todo.text }}</li>
-    </ul>
+    <router-link to="/user/张三/childOne">张三</router-link>
+    <router-link to="/user/李四/childTwo">李四</router-link>
+    <router-link to="/users/王五">王五</router-link>
   </div>
 </template>
 

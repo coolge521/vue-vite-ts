@@ -7,3 +7,10 @@ export const getSuggestionHall = (data: any) => {
     data
   });
 };
+export const getCategoryData = (data: any) => {
+  return request<any, PageBody<any>>({
+    url: '/suggestion/api/biz/statistics/type/rate',
+    method: 'GET',
+    data
+  });
+};
